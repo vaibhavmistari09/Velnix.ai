@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Velnix AI — Email Subject Lines That Get Opened</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="icon" href="favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ═══════════════ NAVBAR ═══════════════ -->
+<nav id="navbar">
+  <div class="container nav-inner">
+    <a class="nav-logo" href="#">
+      <div class="nav-logo-mark">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      </div>
+      <span class="nav-logo-text">Velnix<em>AI</em></span>
+    </a>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#pricing">Pricing</a>
+    </div>
+    <div class="nav-cta">
+      <a href="login.html" class="btn-ghost">Sign in</a>
+      <a href="signup.html" class="btn-primary accent">Try free →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<section class="hero text-center">
+  <div class="container">
+    <div class="hero-badge"><span class="dot"></span> Powered by Velnix AI &nbsp;·&nbsp; Think Big</div>
+    <h1>
+      Stop writing<br/>
+      <span class="strike">boring</span> subject lines.<br/>
+      Write ones that <em>get opened.</em>
+    </h1>
+    <p class="hero-sub">SubjectAI generates high-converting email subject lines in seconds — tailored to your tone, audience, and goal.</p>
+    <div class="hero-actions">
+      <a href="#generator" class="btn-primary accent btn-xl">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        Generate for free
+      </a>
+      <button class="btn-outline">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+        See it in action
+      </button>
+    </div>
+    <p class="hero-trust">No sign-up required &nbsp;·&nbsp; <strong>14,200+</strong> subject lines generated this week</p>
+
+    <!-- Generator Card -->
+    <div class="generator-wrap" id="generator">
+      <div class="generator-card">
+        <div class="gen-header">
+          <div class="gen-dots"><div class="gen-dot"></div><div class="gen-dot"></div><div class="gen-dot"></div></div>
+          <span class="gen-title">SubjectAI — Generator</span>
+        </div>
+        <div class="gen-body">
+          <div class="gen-label">Describe your email</div>
+          <div class="gen-textarea-wrap">
+            <textarea id="genInput" rows="2" placeholder="e.g. 'Black Friday sale — 40% off all plans, limited to 48 hours'"
+              onkeydown="handleKey(event)" oninput="autoResize(this)"></textarea>
+          </div>
+          <div class="gen-options">
+            <div class="gen-tones" id="tones">
+              <button class="tone-pill active" onclick="setTone(this,'professional')">Professional</button>
+              <button class="tone-pill" onclick="setTone(this,'catchy')">Catchy</button>
+              <button class="tone-pill" onclick="setTone(this,'urgent')">Urgent</button>
+              <button class="tone-pill" onclick="setTone(this,'friendly')">Friendly</button>
+              <button class="tone-pill" onclick="setTone(this,'curious')">Curious</button>
+            </div>
+            <button class="gen-btn" id="genBtn" onclick="generate()">
+              <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              Generate
+            </button>
+          </div>
+        </div>
+        <div class="gen-results" id="genResults">
+          <div class="gen-results-label">Generated subject lines</div>
+          <div class="result-list" id="resultList"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ LOGOS ═══════════════ -->
+<section class="logos">
+  <div class="container">
+    <p class="logos-label">Trusted by teams at</p>
+    <div class="logos-row">
+      <span class="logo-item">Mailchimp</span>
+      <span class="logo-item">HubSpot</span>
+      <span class="logo-item">Notion</span>
+      <span class="logo-item">Figma</span>
+      <span class="logo-item">Linear</span>
+      <span class="logo-item">Stripe</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FEATURES ═══════════════ -->
+<section class="features" id="features">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="section-tag">Why SubjectAI</span>
+      <h2 class="section-title">Every word earns its place.<br/><em>Every line gets opened.</em></h2>
+      <p class="section-sub">We trained on millions of high-performing emails to understand what actually makes people click.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feat-card reveal reveal-delay-1">
+        <div class="feat-icon blue">⚡</div>
+        <h3>Instant generation</h3>
+        <p>Get 5 polished subject lines in under 3 seconds. No more staring at a blank draft — go from brief to send-ready instantly.</p>
+      </div>
+      <div class="feat-card reveal reveal-delay-2">
+        <div class="feat-icon green">🎯</div>
+        <h3>Tone control</h3>
+        <p>Choose from Professional, Catchy, Urgent, Friendly, or Curious. The AI adapts its voice to match your campaign goal.</p>
+      </div>
+      <div class="feat-card reveal reveal-delay-3">
+        <div class="feat-icon amber">✉</div>
+        <h3>Open-rate optimised</h3>
+        <p>Every suggestion is scored against patterns from high-performing campaigns — personalization, curiosity gaps, and power words baked in.</p>
+      </div>
+      <div class="feat-card reveal reveal-delay-1">
+        <div class="feat-icon amber">🔄</div>
+        <h3>Unlimited variations</h3>
+        <p>Not satisfied? Hit generate again. Each run produces fresh, non-repetitive options trained to avoid clichés and spam triggers.</p>
+      </div>
+      <div class="feat-card reveal reveal-delay-2">
+        <div class="feat-icon blue">📊</div>
+        <h3>Explained reasoning</h3>
+        <p>Every subject line comes with a short note explaining why it works — so you learn and improve your own instincts over time.</p>
+      </div>
+      <div class="feat-card reveal reveal-delay-3">
+        <div class="feat-icon green">🔒</div>
+        <h3>Privacy first</h3>
+        <p>Your prompts are never stored or used for training. What you type stays between you and the generator — full stop.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ HOW IT WORKS ═══════════════ -->
+<section class="how" id="how-it-works">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="section-tag">How it works</span>
+      <h2 class="section-title">From brief to brilliant<br/><em>in three steps.</em></h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal reveal-delay-1">
+        <div class="step-num">1</div>
+        <h3>Describe your email</h3>
+        <p>Type a sentence about your email's purpose — a sale, a newsletter, a follow-up. The more specific, the better the output.</p>
+      </div>
+      <div class="step reveal reveal-delay-2">
+        <div class="step-num">2</div>
+        <h3>Pick your tone</h3>
+        <p>Tell the AI how you want to sound. Whether you need urgency-driven copy or a warm friendly nudge, choose the right style.</p>
+      </div>
+      <div class="step reveal reveal-delay-3">
+        <div class="step-num">3</div>
+        <h3>Copy and send</h3>
+        <p>Your 5 subject lines appear instantly. One click copies it to your clipboard. Paste into Mailchimp, HubSpot, or anywhere.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ STATS ═══════════════ -->
+<section class="stats">
+  <div class="container reveal">
+    <div class="stats-grid">
+      <div class="stat-cell">
+        <div class="stat-num">14<em>k+</em></div>
+        <div class="stat-label">Lines generated this week</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">38<em>%</em></div>
+        <div class="stat-label">Average open rate lift</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">3<em>s</em></div>
+        <div class="stat-label">Average generation time</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">5<em>★</em></div>
+        <div class="stat-label">Rating from early users</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ TESTIMONIALS ═══════════════ -->
+<section class="testimonials">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="section-tag">What users say</span>
+      <h2 class="section-title">Loved by email <em>marketers.</em></h2>
+      <p class="section-sub">From solo founders to marketing teams — here's what they're saying.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal reveal-delay-1">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"I used to spend 20 minutes agonising over subject lines. SubjectAI gives me five great options in seconds. My open rates jumped 31% in the first month."</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:var(--accent)">PR</div>
+          <div><div class="testi-name">Priya Rajan</div><div class="testi-role">Email Marketing Lead, SaaSify</div></div>
+        </div>
+      </div>
+      <div class="testi-card reveal reveal-delay-2">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"The 'Curious' tone is genuinely uncanny. It writes open loops I wouldn't have thought of myself. Our product launch email had a 58% open rate."</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:var(--green)">TK</div>
+          <div><div class="testi-name">Tom Kowalski</div><div class="testi-role">Founder, LaunchPad Studio</div></div>
+        </div>
+      </div>
+      <div class="testi-card reveal reveal-delay-3">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"As a final year student building this tool, I'm blown away by how polished the UI looks. It genuinely feels like a real SaaS product."</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:#a855f7">AM</div>
+          <div><div class="testi-name">Arjun Mehta</div><div class="testi-role">CS Final Year Student</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ PRICING ═══════════════ -->
+<section class="pricing text-center" id="pricing">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-tag">Pricing</span>
+      <h2 class="section-title">Simple, transparent<br/><em>pricing.</em></h2>
+      <p class="section-sub">Start free. Scale when you're ready. No hidden fees, ever.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="price-card reveal reveal-delay-1">
+        <div class="price-plan">Starter</div>
+        <div class="price-amount">$0</div>
+        <div class="price-period">Free forever</div>
+        <div class="price-divider"></div>
+        <ul class="price-features">
+          <li>10 generations / day</li>
+          <li>5 tones available</li>
+          <li>Copy to clipboard</li>
+          <li>No sign-up required</li>
+        </ul>
+        <a href="signup.html" class="price-cta outline">Get started free</a>
+      </div>
+      <div class="price-card featured reveal reveal-delay-2">
+        <span class="price-badge">Most Popular</span>
+        <div class="price-plan">Pro</div>
+        <div class="price-amount">$12</div>
+        <div class="price-period">per month</div>
+        <div class="price-divider"></div>
+        <ul class="price-features">
+          <li>Unlimited generations</li>
+          <li>All 5 tones + custom</li>
+          <li>History & saved lines</li>
+          <li>A/B test suggestions</li>
+          <li>API access</li>
+        </ul>
+        <a href="signup.html" class="price-cta filled">Start Pro trial →</a>
+      </div>
+      <div class="price-card reveal reveal-delay-3">
+        <div class="price-plan">Team</div>
+        <div class="price-amount">$39</div>
+        <div class="price-period">per month</div>
+        <div class="price-divider"></div>
+        <ul class="price-features">
+          <li>Everything in Pro</li>
+          <li>Up to 10 seats</li>
+          <li>Shared workspace</li>
+          <li>Priority support</li>
+          <li>Analytics dashboard</li>
+        </ul>
+        <a href="signup.html" class="price-cta outline">Talk to sales</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ CTA ═══════════════ -->
+<section class="cta-section text-center">
+  <div class="container reveal">
+    <span class="section-tag">Get started</span>
+    <h2 class="section-title">Your next email opens<br/><em>start here.</em></h2>
+    <p>Join thousands of marketers writing better subject lines — no credit card, no sign-up, just great copy.</p>
+    <div class="cta-actions">
+      <a href="#generator" class="btn-primary accent btn-xl">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        Try it free now
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a class="nav-logo" href="#" style="text-decoration:none">
+          <div class="nav-logo-mark"><svg viewBox="0 0 24 24" width="16" height="16" fill="rgba(255,255,255,.6)"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+          <span class="nav-logo-text">Velnix<em>AI</em></span>
+        </a>
+        <p class="footer-desc">AI-powered email subject lines that get opened. Built as a Big Opportunity.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <a href="#">Features</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="#">API</a>
+        <a href="#">Changelog</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="#">Documentation</a>
+        <a href="#">Blog</a>
+        <a href="#">Email tips</a>
+        <a href="#">Templates</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#">About</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2025 VelnixAI. All rights reserved.</span>
+      <span class="footer-note">Build Your Opportunity — Built with Velnix AI</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
